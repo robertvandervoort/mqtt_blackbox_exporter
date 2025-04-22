@@ -1,0 +1,10 @@
+services:
+  mqtt_blackbox_exporter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9214:9214"
+    volumes:
+      - ./config.yaml:/config.yaml
+    restart: unless-stopped 
